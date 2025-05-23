@@ -9,10 +9,16 @@ namespace ConsoleApp6
 
     class Program
     {
+        /// <summary>
+        /// метод класс такер принимает значения класса и изменяет значение change (myClass)
+        /// <summary>
         static void ClassTaker(MyClass myClass)
         {
             myClass.change = "Изменено";
         }
+        /// <summary>
+        /// Метод структуры такер принимает структуру и изменяет поле структуры change
+        /// <summary>
          static void StructTaker(MyStruct myStruct)
         {
             myStruct.change = "Изменено";
@@ -20,10 +26,13 @@ namespace ConsoleApp6
         static void Main(string[] args)
         {
 
-        MyClass myclass = new MyClass();
-        myclass.change = "не изменено";
-        MyStruct mystruct = new MyStruct();
-        mystruct.change = "Не изменено";
+        MyClass myclass = new MyClass(); // создаем экземпляр класса
+        myclass.change = "не изменено"; // инициализируем поля
+        MyStruct mystruct = new MyStruct(); // создаем экземпляр структуры
+        mystruct.change = "Не изменено"; // инициализируем поля
+        CW($"MyClass.change = {MyClass.change}");
+           cw($"MyStruct.change = {MyStruct.change}");
+            //вызываем методы 
         ClassTaker(myclass);
         StructTaker(mystruct);
         Console.WriteLine($"Структура: " + mystruct.change);
